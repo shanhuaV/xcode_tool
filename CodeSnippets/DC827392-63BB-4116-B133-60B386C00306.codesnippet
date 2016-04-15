@@ -3,28 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>myhidekeyboard</string>
+	<string>mystrong</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>ClassInterfaceMethods</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    [self.view endEditing:YES];
-}
-</string>
+	<string>@property (nonatomic, strong) &lt;#ivar#&gt; *&lt;#ivar#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A807145A-F6BD-412C-AA06-DC931E43F730</string>
+	<string>DC827392-63BB-4116-B133-60B386C00306</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Hide keyboard when touch background</string>
+	<string>Strong property in class interface</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Touch To Hide Keyboard</string>
+	<string>Property Strong</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

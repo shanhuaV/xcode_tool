@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myrotationanchor</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  得到图片的旋转支点--以当前屏幕中心为支点
+ */
+- (void)correctAnchorPointForRotationView:(UIView *)view
+{
+    CGPoint anchorPoint = CGPointZero;
+    //以屏幕中心为旋转中心
+    CGPoint rotationCenter = &lt;#self.center#&gt;;
+    CGPoint viewPoint = [view convertPoint:rotationCenter fromView:&lt;#self.superview#&gt;];
+    //转换坐标，得到rotationCenter 在 view中的坐标
+    anchorPoint.x = (viewPoint.x) / view.bounds.size.width;
+    anchorPoint.y = (viewPoint.y) / view.bounds.size.height;
+    
+    [self setAnchorPoint:anchorPoint forView:view];
+}
+
+/**
+ *  设置图片的旋转支点anchorPoint + 同时更改position 保持视图不移动
+ */
+-(void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
+{
+    CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height * anchorPoint.y);
+    CGPoint oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y);
+    
+    newPoint = CGPointApplyAffineTransform(newPoint, view.transform);
+    oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform);
+    
+    CGPoint position = view.layer.position;
+    
+    position.x -= oldPoint.x;
+    position.x += newPoint.x;
+    
+    position.y -= oldPoint.y;
+    position.y += newPoint.y;
+    
+    view.layer.position = position;
+    view.layer.anchorPoint = anchorPoint;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2EDB1234-5715-44FE-ABA4-E81E671D39CD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Rotation a view around the screen center</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rotation With AnchorPoint</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -23,8 +23,10 @@ self.&lt;#var#&gt; = [NSTimer scheduledTimerWithTimeInterval:1.5
 	<string>C2DF7BF7-EF10-4F82-A9D3-D0E9C0991E9E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Standard scheduled timer code</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>timer</string>
+	<string>Scheduled Timer</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

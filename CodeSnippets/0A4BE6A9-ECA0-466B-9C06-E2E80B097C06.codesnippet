@@ -37,11 +37,13 @@ CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ)
 	<string>0A4BE6A9-ECA0-466B-9C06-E2E80B097C06</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Perspect layer transform when transform animation</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Perspect Layer Transform</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
