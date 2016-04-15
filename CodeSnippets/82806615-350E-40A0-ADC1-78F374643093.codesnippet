@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myimageviewfitsize</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  图片旋转后根据image的宽高得到适配屏幕的最佳大小
+ *
+ *  @param size   image的大小(区分横竖)
+ *  @param center 中心点
+ *
+ *  @return 最佳适配大小
+ */
+- (CGSize)calculateImageViewSizeByImageSize:(CGSize)size centerPoint:(CGPoint)center {
+    CGFloat imageWidth = size.width;
+    CGFloat imageHeight = size.height;
+    CGFloat scale_max = 1.0f * 1.618f;
+    CGFloat scale_mini = 1.0f;
+    
+    BOOL overWidth = imageWidth &gt; self.bounds.size.width;
+    BOOL overHeight = imageHeight &gt; self.bounds.size.height;
+    
+    CGSize fitSize = CGSizeMake(imageWidth, imageHeight);
+    
+    if (overWidth &amp;&amp; overHeight) {
+        CGFloat timesThanScreenWidth = (imageWidth / self.bounds.size.width);
+        if (!((imageHeight / timesThanScreenWidth) &gt; self.bounds.size.height)) {
+            scale_max =  timesThanScreenWidth * 1.618f;
+            fitSize.width = self.bounds.size.width;
+            fitSize.height = imageHeight / timesThanScreenWidth;
+        } else {
+            CGFloat timesThanScreenHeight = (imageHeight / self.bounds.size.height);
+            scale_max =  timesThanScreenHeight * 1.618f;
+            fitSize.width = imageWidth / timesThanScreenHeight;
+            fitSize.height = self.bounds.size.height;
+        }
+    } else if (overWidth &amp;&amp; !overHeight) {
+        CGFloat timesThanFrameWidth = (imageWidth / self.bounds.size.width);
+        scale_max =  timesThanFrameWidth * 1.618f;
+        fitSize.width = self.bounds.size.width;
+        fitSize.height = imageHeight / timesThanFrameWidth;
+    } else if (overHeight &amp;&amp; !overWidth) {
+        fitSize.height = self.bounds.size.height;
+    }
+
+    self.maximumZoomScale = scale_max;
+    self.minimumZoomScale = scale_mini;
+    return fitSize;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>82806615-350E-40A0-ADC1-78F374643093</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Get the fitsize according to image size and the screen</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Calculate ImageView Size By Image Size</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
