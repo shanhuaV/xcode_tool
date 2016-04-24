@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mycategory</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import &lt;objc/runtime.h&gt;
+
+static void *marginOfViewsKey = &amp;marginOfViewsKey;
+
+@implementation UIViewController (MTSlideAnimation)
+
+@dynamic marginOfDisplayToolBarView;
+
+- (CGFloat)marginOfDisplayToolBarView {
+    NSString *margin = objc_getAssociatedObject(self, marginOfViewsKey);
+    return [margin floatValue];
+}
+
+- (void)setMarginOfDisplayToolBarView:(CGFloat)marginOfDisplayToolBarView {
+    NSString *margin = [NSString stringWithFormat:@"%f",marginOfDisplayToolBarView];
+    objc_setAssociatedObject(self, marginOfViewsKey, margin, OBJC_ASSOCIATION_COPY);
+}
+
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>522DEF17-2A56-4EC6-B93E-68E99CD59F72</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Interface category</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Class Category</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
