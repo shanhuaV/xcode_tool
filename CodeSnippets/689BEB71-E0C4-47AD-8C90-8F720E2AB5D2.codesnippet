@@ -3,21 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mystrong</string>
+	<string>myenum</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, strong) &lt;#ivar#&gt; *&lt;#ivar#&gt;;</string>
+	<string>typedef NS_ENUM(NSInteger, MTSliderDirection) {
+    MTSliderDirectionLeft = 0,
+    MTSliderDirectionRight   = 1,
+};</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>DC827392-63BB-4116-B133-60B386C00306</string>
+	<string>689BEB71-E0C4-47AD-8C90-8F720E2AB5D2</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Strong property in class interface</string>
+	<string>Custom user enum</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Property Strong</string>
+	<string>Custom ENUM</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
